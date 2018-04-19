@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+
+        .arrows, .arrows::after  {
+            border: 2px solid black;
+            border-left: none;
+            border-top: none;
+            height:20px;
+            width:20px;
+            display:inline-block;
+        }
+        .arrows {
+            margin: 20px;
+        }
+        .arrows-right {
+            transform: rotate(-45deg);
+            top:15px;
+            position:relative;
+        }
+
+        .arrows-up {
+            transform: rotate(-135deg);
+            top:20px;
+            position:relative;
+        }
+
+        .arrows-down {
+            transform: rotate(45deg)
+        }
+        .arrows-left {
+            transform: rotate(135deg);
+            top:15px;
+            position:relative;
+            left:15px;
+        }
+
+        .arrows::after {
+            content:'';
+            position:absolute;
+            left:10px;
+            top:10px;
+        }
+
+
+
+
+
+        header {
+            height: 70vh;
+            background: url('img/background.jpg') top center fixed;
+            background-size: cover;
+            padding: 0 !important;
+        }
+
+        .row, #section_2 .container {
+            height: 100%;
+
+        }
+
+        header ul#menu {
+            margin: 0;
+            padding: 0;
+        }
+
+        header li:first-child {
+            height: 19vh;
+        }
+
+        header li.col-sm-8 a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bolder;
+            font-size: 1.4rem;
+        }
+
+        header ul {
+            list-style: none;
+            background: rgba(0, 0, 255, 0.2);
+        }
+
+        header .no-gutters .col-7 {
+            display: flex;
+
+        }
+
+        header .banner {
+            width: 100%;
+
+        }
+
+        header li {
+            height: 5vh;
+            align-items: center;
+            display: flex;
+        }
+
+        header li.social {
+            height: 10vh;
+        }
+
+        header li:last-child {
+            background: white;
+            height: 6vh;
+            display: flex;
+        }
+
+        header li span {
+            width: 20px;
+            height: 20px;
+            border: 2px solid black;
+            border-top: none;
+            border-left: none;
+            display: flex;
+            box-shadow: 2px 2px 0 black;
+            transform: rotate(-45deg);
+            float: left;
+
+        }
+
+        header li span {
+            margin-right: 20px;
+        }
+
+        header h1,
+        header h2,
+        header h3 {
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 10rem;
+            font-weight: bolder;
+        }
+
+        header h2 {
+            margin-top: -2rem;
+            font-size: 5rem;
+        }
+
+        header h3 {
+            font-size: 2rem;
+        }
+
+        #section_1 {
+            height: 700px;
+            background: url('img/section_1.jpg') top center;
+            background-size: cover;
+            color: white;
+        }
+
+        #section_1 h2 {
+            font-size: 6rem;
+            line-height: 6rem;
+            font-weight: bolder;
+
+        }
+
+        #section_1 .row:first-child {
+            height: 100%;
+        }
+
+        #section_2 {
+            background: #1b1e21;
+            color: white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+            font-size: 1.5rem;
+        }
+
+        #section_2 em {
+            font-size: 4rem;
+        }
+
+        #section_2 .col-2 {
+            height: 120%;
+            background: red;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+            z-index:10;
+        }
+
+        #section_3 {
+            height: 700px;
+            background: url('img/background.jpg') top center fixed;
+            background-size: cover;
+        }
+
+        #section_3 .row:first-child > .col,#section_5 .row:first-child > .col-12{
+            height:100%;
+        }
+
+        #section_3 h3, #section_4 h3, #section_5 h3{
+            margin-bottom: 15vh;
+            font-size: 3rem;
+            line-height: 3rem;
+            font-weight: bolder;
+
+        }
+
+        #section_4 {
+            height: 650px;
+            background: #efefef;
+
+        }
+        #section_4 .row, #section_4 .col-6 {
+            height: 100%;
+        }
+        #section_4 .col-10 {
+            margin:auto;
+        }
+        #section_4 .col-6:first-child {
+            position: relative;
+            background: url('img/section_4.jpg') top center fixed;
+            background-size: cover;
+        }
+        #section_4 .col-6:last-child {
+            position: relative;
+            background: url('img/section_4b.jpg') top center fixed;
+            background-size: cover;
+        }
+
+
+        section input, section input ~ .row {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        section input[type="checkbox"] {
+            opacity: 0;
+            z-index: 10;
+        }
+
+        section input ~ .row {
+            display: none;
+            z-index: 1;
+        }
+
+        section input ~ .row h3 {
+            color: darkgray;
+            margin: 0 auto 2rem;
+
+        }
+
+        section input:checked ~ .row {
+            display: flex;
+            background: #efefef;
+            margin:0;
+        }
+
+        section input:checked + h3 {
+            display: none;
+
+        }
+        section input + h3 {
+            position:relative;
+            top:70%;
+            right:10%;
+        }
+
+        #section_5 {
+            height: 800px;
+            background: green;
+        }
+        #section_5 small {
+            margin-top:5vh;
+            font-size:2rem;
+            display: inline-block;
+        }
+
+        #section_5 h3 span.arrows.arrows-right {
+            right: 10px;
+            top: 14px;
+        }
+
+        #section_5 h3 a.btn {
+            z-index:30;
+        }
+
+
+
+        #section_6 {
+            height: 100vh;
+            background: blue;
+        }
+
+        #section_7 {
+            height: 700px;
+            background: gray;
+        }
+
+        #section_8 {
+            height: 700px;
+            background: red;
+
+        }
+
+        #section_9 {
+            height: 1000px;
+            background: green;
+        }
+
+        footer {
+            height: 400px;
+            background: orange;
+        }
+
+    </style>
+</head>
+<body>
+
+<header class="container-fluid">
+    <div class="row no-gutters">
+        <div class="col-4">
+            <ul id="menu" class="row align-items-center justify-content-center">
+                <li class="col-sm-8"><img class="logo" src="img/logo.png"/></li>
+                <li class='col-sm-8'><span></span><a href="#Section_1">Section One</a></li>
+                <li class='col-sm-8'><span></span><a href="#Section_2">Section Two</a></li>
+                <li class='col-sm-8'><span></span><a href="#Section_3">Section Three</a></li>
+                <li class='col-sm-8'><span></span><a href="#Section_4">Section Four</a></li>
+                <li class='col-sm-8'><span></span><a href="#Section_5">Section Five</a></li>
+                <li class='col-sm-8'><span></span><a href="#Section_6">Section Six</a></li>
+                <li class='col-sm-8'><span></span><a href="#Section_7">Section Seven</a></li>
+
+                <li class='col-sm-8 social'>
+                    <i class="facebook">F</i> | <i class="twitter">T</i> | <a href="#" class="email">email@email.com</a>
+                </li>
+                <li class="col-12 call_to_action justify-content-end align-items-center"><a href="#">Phone</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-7">
+            <div class="row align-items-center text-right banner">
+                <div class="col-12">
+                    <h1>Excitment</h1>
+                    <h2>Supremest Stuff</h2>
+                    <h3>All The Things</h3>
+                    <img class="logo" width="200" src="img/logo.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+
+    </div>
+</header>
+<section id="section_1" class="container-fluid">
+    <div class="row align-items-center banner">
+        <div class="col-sm-12">
+            <div class="container">
+                <div class="row align-items-center banner">
+                    <div class="col-8">
+                        <h2>Super Cool <br> Heading</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque consequatur consequuntur
+                            dolore, eos esse excepturi id illum maiores mollitia nihil non placeat ratione repellat
+                            sequi sit tempora veritatis, voluptatem.
+                        </p>
+                        <p class="lead">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque consequatur consequuntur
+                            dolore, eos esse excepturi id illum maiores mollitia nihil non placeat ratione repellat
+                            sequi sit tempora veritatis, voluptatem.
+                        </p>
+
+                        <button class="btn btn-primary col-4">Beep</button>
+                        <button class="btn btn-secondary col-4">Boop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section id="section_2" class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="container">
+                <div class="row text-center align-items-center">
+                    <div class="col-5"><em class="count">40000</em> Things</div>
+                    <div class="col-2"><em class="count">50</em> Actions</div>
+                    <div class="col-5"><em class="count">200</em> Attributes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="section_3" class="container-fluid">
+    <div class="row align-items-end text-right">
+        <div class="col">
+            <input type="checkbox">
+            <h3>Epic Content<span class="arrows arrows-left"></span></h3>
+
+            <div class="row align-items-center justify-content-center text-center">
+                <div class="col-10">
+                    <h3>Epic Content</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cumque
+                        dignissimos dolor doloremque dolores ea, eligendi ex excepturi expedita, facilis hic
+                        illum inventore maiores nemo nobis quaerat repellat, repudiandae sunt?</p>
+                    <span class="arrows arrows-down"></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="section_4" class="container-fluid">
+    <div class="row align-items-end text-right">
+        <div class="col-6">
+            <input type="checkbox">
+            <h3>Epic Content<span class="arrows arrows-left"></span></h3>
+
+            <div class="row align-items-end justify-content-center text-center">
+                <div class="col-10">
+                    <h3>Epic Content</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cumque
+                        dignissimos dolor doloremque dolores ea, eligendi ex excepturi expedita, facilis hic
+                        illum inventore maiores nemo nobis quaerat repellat, repudiandae sunt?</p>
+                    <span class="arrows arrows-down"></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-6">
+            <input type="checkbox">
+            <h3><span class="arrows arrows-right"></span> Epic Title</h3>
+            <div class="row align-items-end justify-content-center text-center">
+                <div class="col-10">
+                    <h3>Epic Title</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cumque
+                        dignissimos dolor doloremque dolores ea, eligendi ex excepturi expedita, facilis hic
+                        illum inventore maiores nemo nobis quaerat repellat, repudiandae sunt?</p>
+                    <span class="arrows arrows-up"></span>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<section id="section_5" class="container">
+    <div class="row align-items-end text-right">
+        <div class="col-12">
+            <input type="checkbox" />
+            <h3><span class="arrows arrows-right"></span>Services<br>
+                <small>Need Help?</small><br>
+                <a class="btn btn-primary" href="#testing">Contact Us</a>
+            </h3>
+
+            <div class="row align-items-center justify-content-center text-center">
+                <div class="col-10">
+                    <h3>Epic Content</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cumque
+                        dignissimos dolor doloremque dolores ea, eligendi ex excepturi expedita, facilis hic
+                        illum inventore maiores nemo nobis quaerat repellat, repudiandae sunt?</p>
+                    <span class="arrows arrows-down"></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="section_6" class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-8">Content</div>
+
+    </div>
+</section>
+<section id="section_7" class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-8">Content</div>
+
+    </div>
+</section>
+<section id="section_8" class="container-fluid">
+    <div class="row">
+        <div class="col-3">1</div>
+        <div class="col-3">2</div>
+        <div class="col-3">3</div>
+        <div class="col-3">4</div>
+    </div>
+    <div class="row">
+        <div class="col-3">5</div>
+        <div class="col-3">6</div>
+        <div class="col-3">7</div>
+        <div class="col-3">8</div>
+
+    </div>
+</section>
+<section id="section_9" class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">Form</div>
+        <div class="col-2"></div>
+    </div>
+</section>
+<footer class="container">
+    <div class="row">
+        <div class="col-6">Title</div>
+        <div class="col-6">Title</div>
+
+    </div>
+</footer>
+
+<script>
+  let n = [], cn = 0
+  document.querySelectorAll('em.count').forEach(a => { n.push({e: a, m: parseInt(a.innerHTML)}) })
+
+  let c = () => {
+    cn++
+    n.map(a => { a.e.innerHTML = Math.ceil(a.m * (cn / 100)) })
+    if (cn < 100) window.requestAnimationFrame(c)
+  }
+  window.requestAnimationFrame(c)
+
+</script>
+</body>
+</html>
